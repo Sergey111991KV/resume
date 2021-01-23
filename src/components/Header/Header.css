@@ -1,0 +1,11 @@
+.social_network_header {
+    grid-area: snh;
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+  }
+
+.social_network_header_img {
+    width: 30px;
+    height: 30px;
+}
