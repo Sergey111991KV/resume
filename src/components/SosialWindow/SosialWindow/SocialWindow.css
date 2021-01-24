@@ -1,0 +1,22 @@
+.social_network {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30px 1fr 30px; 
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "snh snh snh"
+    "snn snc snc"
+    "snf snf snf" 
+    ;
+    margin: 10px 10px 10px 10px;
+  }
+  
+  
+  .social_network_content {
+    height: 600px;
+    grid-area: snc;
+    background-color: brown;
+  }
+  

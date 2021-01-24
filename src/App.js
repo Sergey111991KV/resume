@@ -1,18 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Contents from './components/Contents/Contents';
-import Navbar from './components/Navbar/Navbar';
+import SocialWindow from './components/SosialWindow/SosialWindow/SocialWindow';
+import ResumeWindow from './components/ResumeWindow/ResumeWindow/ResumeWindow';
+import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className='social_network'>
-      <Header></Header>
-      <Navbar></Navbar>
-      <Contents></Contents>
-      <Footer></Footer>
-    </div>
+    <BrowserRouter>
+      <div >
+        <Route path='/main' component={ResumeWindow} />
+        <Route path='/social' component={SocialWindow}/>
+      </div>
+    </BrowserRouter>
   );
 }
 

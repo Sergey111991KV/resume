@@ -1,7 +1,7 @@
 import React from 'react'
-import './Header.css'
+import './SocialHeader.css'
 
-function Header() {
+function SocialHeader() {
   return (
     <div className="social_network_header" >
         <img className="social_network_header_img" src="https://massimilianostocchi.it/wp-content/uploads/2019/01/formazione-icona.png"></img>
@@ -10,4 +10,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default SocialHeader;

@@ -1,7 +1,7 @@
 import React from 'react'
-import './Footer.css'
+import './SocialFooter.css'
 
-function Footer() {
+function SocialFooter() {
   return (
     <div className="social_network_footer">
         Footer
@@ -9,4 +9,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default SocialFooter;
