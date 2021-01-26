@@ -1,0 +1,8 @@
+.social_dialogs_persons{
+    background-color: gainsboro;
+    height: 90%;
+    display: grid; 
+
+    grid-auto-rows: 30px;
+}
+

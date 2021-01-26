@@ -1,0 +1,10 @@
+.social_dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: rgb(255, 123, 123);
+    height: 100%;
+
+    grid-gap: 10px;
+}
+
+

@@ -1,14 +1,15 @@
 import './App.css';
-import SocialWindow from './components/SosialWindow/SosialWindow/SocialWindow';
-import ResumeWindow from './components/ResumeWindow/ResumeWindow/ResumeWindow';
+import SocialWindow from './components/SosialWindow/Window/Window';
+import ResumeWindow from './components/ResumeWindow/Window/Window';
 import { BrowserRouter, Route } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div >
-        <Route path='/main' component={ResumeWindow} />
-        <Route path='/social' component={SocialWindow}/>
+        <Route path='/main' render={() => <ResumeWindow />}/>
+        <Route path='/social' render={() => <SocialWindow state={props.state.socialWindow} 
+                                            />}/>
       </div>
     </BrowserRouter>
   );
