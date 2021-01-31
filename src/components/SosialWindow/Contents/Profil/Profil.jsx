@@ -1,5 +1,6 @@
 import React from 'react'
-import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
+
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 
@@ -8,7 +9,8 @@ function Profil(props) {
   return (
     <div >
       <ProfileInfo></ProfileInfo>
-      <MyPosts  store={props.store} />
+      <MyPostsContainer store={props.store}></MyPostsContainer>
+      {/* <MyPostsContainer  store={props.store} /> */}
     </div>
   );
 }

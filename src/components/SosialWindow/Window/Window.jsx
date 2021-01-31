@@ -1,11 +1,12 @@
 import React from 'react'
-import Dialogs from '../Contents/Dialogs/Dialogs'
+
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import NavBar from '../NavBar/NavBar'
 import './Window.css'
 import { BrowserRouter, Route } from "react-router-dom";
 import Profil from '../Contents/Profil/Profil'
+import DialogsContainer from '../Contents/Dialogs/DialogsContainer'
 
 
 function SocialWindow(props) {
@@ -19,7 +20,7 @@ function SocialWindow(props) {
                                                                 store={props.store} 
                                                               />} 
                 />
-                <Route path='/social/dialogs' render={ () => <Dialogs store={props.store} />}/>
+                <Route path='/social/dialogs' render={ () => <DialogsContainer store={props.store}/>}/>
             
           </div>
           <Footer></Footer>

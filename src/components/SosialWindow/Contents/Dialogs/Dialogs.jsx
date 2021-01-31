@@ -8,11 +8,11 @@ import Persons from './Persons/Persons';
 
 
 function Dialogs(props) {
-  let state = props.store.getState().socialWindow.dialogsPage
+  
   return (
     <div className="social_dialogs">
-      <Persons persons={state.persons}></Persons>
-      <Messages store={props.store}></Messages>
+      <Persons persons={props.state.persons}></Persons>
+      <Messages state={props.state} sendMessage={props.sendMessage} changeMessage={props.changeMessage}  ></Messages>
     </div>
   );
 }

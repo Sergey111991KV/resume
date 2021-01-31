@@ -3,21 +3,21 @@ import Post from './Post/Post'
 import { addPostCreator,updateNewPostTextCreator } from "../../../../../redux/social-profile-reducer";
 
 function MyPosts(props) {
-    let state = props.store.getState().socialWindow.profilePage
-    let postElements = state.posts.map(post => <Post  id={post.id} 
+
+    let postElements = props.state.posts.map(post => <Post  id={post.id} 
                                                       textPost={post.textPost}  
                                                       likesCount={post.likesCount} 
                                                       />)
 
     let newPostElement = React.createRef()                                       
 
-    let addPost = () => {
-      props.store.dispatch(addPostCreator())
+    let sendPost = () => {
+      props.addPost()
     }
     
-    let onPostChangeInComponent = () => {
+    let onPostChange = () => {
       let text = newPostElement.current.value
-      props.store.dispatch(updateNewPostTextCreator(text))
+      props.onPostChangeInComponent(text)
     }
 
   return (
@@ -26,12 +26,12 @@ function MyPosts(props) {
         My Posts
       </h3>
         <div >
-            <textarea onChange={onPostChangeInComponent} 
+            <textarea onChange={onPostChange} 
                       ref={newPostElement}
-                      value={state.newPostText} />
+                      value={props.state.newPostText} />
         </div>
         <div >
-            <button onClick={addPost}>AddPost</button>
+            <button onClick={sendPost}>AddPost</button>
         </div>
         <div >
             {postElements}

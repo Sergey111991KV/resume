@@ -4,14 +4,15 @@ import './Messages.css'
 import {updateNewMessageBodyCreator,sendMessageCreator} from '../../../../../redux/social-dialogs-reducer'
 
 function Messages(props) {
-  let state = props.store.getState().socialWindow.dialogsPage
-  let messagesElement = state.messages.map(message => <Message id={message.id} textMessage={message.textMessage} />)
+
+  let messagesElement = props.state.messages.map(message => <Message id={message.id} textMessage={message.textMessage} />)
+
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator())
+    props.sendMessage()
   }
   let onNewMessageChange = (e) => {
     let body =  e.target.value
-    props.store.dispatch(updateNewMessageBodyCreator(body))
+    props.changeMessage(body)
   }
 
   return (
@@ -19,7 +20,7 @@ function Messages(props) {
      <div></div>{messagesElement}
      <div>
         <div><textarea 
-                        value={state.newMessageBody} 
+                        value={props.state.newMessageBody} 
                         placeholder='Enter your message' 
                         onChange={onNewMessageChange}
             ></textarea>
