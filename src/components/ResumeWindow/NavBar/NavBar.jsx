@@ -1,14 +1,15 @@
 import './NavBar.css'
 import NavItem from './NavItem/NavItem'
 
-function NavBar() {
-
+function NavBar(props) {
+  debugger
+  let navMainElement = props.state.map(nav => <NavItem name={nav.name} refAdress={nav.refAdress} />)
   return (
-    <div className="social_network_NavBar">
-      <NavItem name="Main" refAdress="/main"></NavItem>
-      <NavItem name="About My Scills" refAdress="/main/scills"></NavItem>
-      <NavItem name="Social Network" refAdress="/social"></NavItem>
-    </div>
+
+        <div className="social_network_NavBar">
+          {navMainElement}
+        </div>
+      
   );
 }
 

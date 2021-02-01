@@ -1,6 +1,5 @@
 import React from 'react'
 import Post from './Post/Post'
-import { addPostCreator,updateNewPostTextCreator } from "../../../../../redux/social-profile-reducer";
 
 function MyPosts(props) {
 

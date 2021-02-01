@@ -9,8 +9,7 @@ function Profil(props) {
   return (
     <div >
       <ProfileInfo></ProfileInfo>
-      <MyPostsContainer store={props.store}></MyPostsContainer>
-      {/* <MyPostsContainer  store={props.store} /> */}
+      <MyPostsContainer ></MyPostsContainer>
     </div>
   );
 }

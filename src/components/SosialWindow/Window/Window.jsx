@@ -16,11 +16,9 @@ function SocialWindow(props) {
           <Header></Header>
           <NavBar></NavBar>
           <div>
-                <Route path='/social/profile' render={ () => <Profil 
-                                                                store={props.store} 
-                                                              />} 
+                <Route path='/social/profile' render={ () => <Profil />} 
                 />
-                <Route path='/social/dialogs' render={ () => <DialogsContainer store={props.store}/>}/>
+                <Route path='/social/dialogs' render={ () => <DialogsContainer />}/>
             
           </div>
           <Footer></Footer>

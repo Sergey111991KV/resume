@@ -9,9 +9,21 @@ const SEND_MESSAGE = 'SEND-MESSAGE'
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 
 
+
 let store = {
     _state : {
         resumeWindow : {
+            navMainTag : [],
+            arrayNavItem: [
+                {id: 1, mainTag: 'Menu', name: 'Hard Scills', refAdress: "/main"},
+                {id: 2, mainTag: 'Menu', name: 'Soft Scills', refAdress: "/main"},
+                {id: 3, mainTag: 'Menu', name: 'Biography', refAdress: "/main"},
+                {id: 4, mainTag: 'Hard Scills', name: 'Frontend', refAdress: "/main"},
+                {id: 5, mainTag: 'Hard Scills', name: 'Backend', refAdress: "/main"},
+                {id: 6, mainTag: 'Hard Scills', name: 'Mobile development', refAdress: "/main"},
+                {id: 7, mainTag: 'Frontend', name: 'React', refAdress: "/main"},
+                {id: 8, mainTag: 'React', name: 'Social Network', refAdress: "/main"},
+            ]
     
         },
         socialWindow : {

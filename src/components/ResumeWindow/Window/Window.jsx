@@ -1,10 +1,11 @@
 import React from 'react'
-import NavBar from '../NavBar/NavBar'
+import NavBarContainer from '../NavBar/NavBarContainer'
+
 
 function ResumeWindow() {
   return (
       <div>
-          <NavBar></NavBar>
+          <NavBarContainer></NavBarContainer>
       </div>
   );
 }

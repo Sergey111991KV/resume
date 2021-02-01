@@ -9,8 +9,7 @@ function App(props) {
     <BrowserRouter>
       <div >
         <Route path='/main' render={() => <ResumeWindow />}/>
-        <Route path='/social' render={() => <SocialWindow store={props.store} 
-                                            />}/>
+        <Route path='/social' render={() => <SocialWindow />}/>
       </div>
     </BrowserRouter>
   );
