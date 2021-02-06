@@ -1,0 +1,13 @@
+.nav_bar_item_main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    vertical-align: middle;
+
+  
+}
+
+.nav_bar_item_main:hover {
+    color:rgb(138, 6, 6)
+}

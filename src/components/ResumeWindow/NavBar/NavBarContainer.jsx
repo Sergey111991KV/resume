@@ -1,5 +1,7 @@
+import { exitTagCreator, mouseEnterTagCreator, touchTagCreator } from '../../../redux/resume-navbar-reducer';
 import StoreContext from '../../../StoreContext';
 import NavBar from './NavBar';
+
 
 function NavBarContainer() {
     return (
@@ -7,9 +9,18 @@ function NavBarContainer() {
         {
           (store) => {
             let state = store.getState().resumeNavPage
-            debugger
 
-        return <NavBar state={state.arrayNavItem}  />
+            let exitClick = () => {
+                store.dispatch(exitTagCreator())
+            }
+            let touchItemClick = (text) => {
+                store.dispatch(touchTagCreator(text))
+            }  
+            let mouseEnter = (id) => {
+                store.dispatch(mouseEnterTagCreator(id))
+            }
+
+        return <NavBar state={state} exitClick={exitClick} touchItemClick={touchItemClick} mouseEnter={mouseEnter} />
         }
         }
       </StoreContext.Consumer>

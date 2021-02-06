@@ -1,0 +1,6 @@
+.nav_bar_content{
+    justify-self: stretch;
+    grid-area: cont;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+}

@@ -1,0 +1,12 @@
+.nav_bar_item_blur{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    vertical-align: middle;
+    color:dimgray
+}
+
+.nav_bar_item_blur:hover {
+    color:rgb(138, 6, 6)
+}

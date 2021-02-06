@@ -1,0 +1,29 @@
+.social_network_NavBar_container{
+    width: 100%;
+    height: 100vh;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 100px auto 1fr 2fr 1fr;
+    grid-template-areas: 
+        "mTag mTag . . ."
+        "windowTags windowTags windowTags . ."
+        ". . . . ."
+        ". cont cont cont ."
+        ". . . . ."
+        ;
+    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8)  ), url("../../../my-photo.jpg");
+
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.window_Tags{
+    justify-self: stretch;
+    grid-area: windowTags;
+    background-color: fuchsia;
+    display: grid; 
+    grid-template-columns: 1fr 1fr ;
+}

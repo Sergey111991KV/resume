@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import NavBar from '../NavBar/NavBar'
 import './Window.css'
-import { BrowserRouter, Route } from "react-router-dom";
+import {  Route } from "react-router-dom";
 import Profil from '../Contents/Profil/Profil'
 import DialogsContainer from '../Contents/Dialogs/DialogsContainer'
 

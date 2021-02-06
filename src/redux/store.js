@@ -23,6 +23,7 @@ let store = {
                 {id: 6, mainTag: 'Hard Scills', name: 'Mobile development', refAdress: "/main"},
                 {id: 7, mainTag: 'Frontend', name: 'React', refAdress: "/main"},
                 {id: 8, mainTag: 'React', name: 'Social Network', refAdress: "/main"},
+               
             ]
     
         },

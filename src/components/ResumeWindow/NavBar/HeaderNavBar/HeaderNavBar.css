@@ -1,0 +1,9 @@
+.nav_bar_header {
+    justify-self: stretch;
+    grid-area: mTag;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 29px;
+    margin-left: 10px;
+    margin-top: 20px;
+    vertical-align: middle;
+}

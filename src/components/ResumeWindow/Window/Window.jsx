@@ -4,7 +4,7 @@ import NavBarContainer from '../NavBar/NavBarContainer'
 
 function ResumeWindow() {
   return (
-      <div>
+      <div className='resume_window'>
           <NavBarContainer></NavBarContainer>
       </div>
   );

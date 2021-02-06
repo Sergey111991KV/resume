@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 function App(props) {
   return (
     <BrowserRouter>
-      <div >
+      <div className='app_container'>
         <Route path='/main' render={() => <ResumeWindow />}/>
         <Route path='/social' render={() => <SocialWindow />}/>
       </div>
