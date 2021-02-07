@@ -4,29 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
-import StoreContext, { Provider } from "./StoreContext";
-
-// dispatch={store.dispatch.bind(store)}
-//             store={store}
+import { Provider } from "react-redux";
 
 
 
-let rerenderTree = () => {
-  ReactDOM.render(
+ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
         <App />
       </Provider>
     </React.StrictMode>,
     document.getElementById('root')
-  );
-}
+);
 
-rerenderTree()
-
-store.subscribe(() => {
-  rerenderTree()
-})
 
 
 

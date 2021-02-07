@@ -2,11 +2,20 @@ import React from 'react'
 import './NavItemMain.css'
 
 
+
+
+
 function NavItemMain(props) {
 
-  const funcMouse = () => {
-    props.mouseEnter(props.name)
+  const funcMouseIn = () => {
+    console.log('funcMouseIn')
+    props.mouseMoveItem(props.name)
   }
+
+  // const funcMouseOut = () => {
+  //   console.log('funcMouseOut')
+  //   props.mouseExitItem()
+  // }
 
   const funcClick = () => {
     props.touchItemClick(props.name)
@@ -14,8 +23,12 @@ function NavItemMain(props) {
  
   const f = () => { console.log('dd')}
   return (
-    <div className="nav_bar_item_main" onMouseEnter={funcMouse} onClick={funcClick} >
-       {props.name}
+    <div className="nav_bar_item_main" 
+          onMouseMove={funcMouseIn} 
+          // onMouseOut={funcMouseOut}
+          onClick={funcClick}
+           >
+          {props.name}
     </div>
   );
 }

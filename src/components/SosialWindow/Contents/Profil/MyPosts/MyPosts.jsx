@@ -1,9 +1,12 @@
 import React from 'react'
 import Post from './Post/Post'
 
+
+
+
 function MyPosts(props) {
 
-    let postElements = props.state.posts.map(post => <Post  id={post.id} 
+    let postElements = props.profilePage.posts.map(post => <Post  id={post.id} 
                                                       textPost={post.textPost}  
                                                       likesCount={post.likesCount} 
                                                       />)
@@ -27,7 +30,7 @@ function MyPosts(props) {
         <div >
             <textarea onChange={onPostChange} 
                       ref={newPostElement}
-                      value={props.state.newPostText} />
+                      value={props.profilePage.newPostText} />
         </div>
         <div >
             <button onClick={sendPost}>AddPost</button>

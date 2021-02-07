@@ -1,13 +1,14 @@
 const TOUCH_TAG = 'TOUCH-TAG'
 const EXIT_TAG = 'EXIT-TAG'
-const MOUSE_ENTER = 'MOUSE-ENTER'
 const MOUSE_ENTER_ITEM = 'MOUSE-ENTER-ITEM'
+const MOUSE_EXIT_ITEM = 'MOUSE-EXIT-ITEM'
+
+
 
 let initialState = {
-    mouseEnterValue: '',
     navMainItemDefault:  {id: 1, mainTag: '', name: 'Menu', refAdress: "", content: 'It is my resume'},
     mouseEnterItem: {},
-    arrayNavItem: [
+    arrayAllItem: [
                 {id: 2, mainTag: 'Menu', name: 'Hard Scills', refAdress: "/main", content: 'It is my Hard Scills'},
                 {id: 3, mainTag: 'Menu', name: 'Soft Scills', refAdress: "/main", content: 'It is my Soft Scills'},
                 {id: 4, mainTag: 'Menu', name: 'Biography', refAdress: "/main", content: 'It is my Biography'},
@@ -27,23 +28,37 @@ let initialState = {
 const resumeNavReducer = (state = initialState,action) => {
     switch (action.type) {
         case TOUCH_TAG:
-            let newMainItemDefault = state.arrayNavItem.find(item => item.name == action.nameTag)
-            let arrayCheck = state.arrayNavItem.filter(item => item.mainTag ===  newMainItemDefault.name)
-            console.log(arrayCheck)
-            if ( arrayCheck.length == 0 ){
-                return state
+            let newMainItemDefault = state.arrayAllItem.find(item => item.name == action.nameTag)
+            // let arrayCheck = state.arrayAllItem.filter(item => item.mainTag ===  newMainItemDefault.name)
+            // console.log(arrayCheck)
+            // if ( arrayCheck.length == 0 ){
+            //     return {
+            //         ...state,
+            //     }
+            // }
+            return  {
+                ...state,
+                navMainItemDefault: newMainItemDefault,
+                mouseEnterItem: {}
             }
-            state.navMainItemDefault = newMainItemDefault
-            state.mouseEnterValue = ''
-            return state
-
         case EXIT_TAG:
-            let newState = state.navMainTag.pop()
-            return newState
-
-        case MOUSE_ENTER:
-                state.mouseEnterValue = action.nameItem
-                return state
+            let exitMainItemDefault = state.arrayAllItem.find(item => item.name == state.navMainItemDefault.mainTag)
+            return {
+                ...state,
+                navMainItemDefault: exitMainItemDefault
+            }
+        case MOUSE_ENTER_ITEM:
+            let mouseItem = state.arrayAllItem.find(item => item.name == action.nameItem)
+            return {
+                ...state,
+                mouseEnterItem: mouseItem
+            }
+             
+        case MOUSE_EXIT_ITEM:
+            return {
+                ...state,
+                mouseEnterItem: {}
+            }
 
         default:
             return state
@@ -55,7 +70,11 @@ export  const touchTagCreator = (name) => ({type : TOUCH_TAG,
 
 export  const exitTagCreator = () => ({type : EXIT_TAG})
 
-export  const mouseEnterTagCreator = (name) => ({type : MOUSE_ENTER,
+export  const mouseEnterTagCreator = (name) => ({type : MOUSE_ENTER_ITEM,
                                         nameItem : name})
+
+export  const mouseExitTagCreator = () => ({type : MOUSE_EXIT_ITEM})
+
+
 
 export default resumeNavReducer

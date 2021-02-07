@@ -5,15 +5,17 @@ import './NavMain.css'
 
 
 function NavMain(props) {
-  let mainArrayItems = props.mainArrayItem.map(nav => <NavItemMain  name={nav.name} 
+  let mainArrayItems = props.array.map(nav => <NavItemMain  name={nav.name} 
     id={nav.id}
+  
+    // mouseExitItem={props.mouseExitItem}
     touchItemClick={props.touchItemClick}
     // exitClick={props.exitClick} 
-    mouseEnter={props.mouseEnter}
+    mouseMoveItem={props.mouseMoveItem}
 />)
 
   return (
-    <div className="nav_main_items" >
+    <div className="nav_main_items"  >
 
       {mainArrayItems}
     </div>
