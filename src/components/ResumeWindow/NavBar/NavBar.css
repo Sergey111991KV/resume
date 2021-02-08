@@ -23,7 +23,6 @@
 .window_Tags{
     justify-self: stretch;
     grid-area: windowTags;
-    background-color: fuchsia;
     display: grid; 
     grid-template-columns: 1fr 1fr ;
 }

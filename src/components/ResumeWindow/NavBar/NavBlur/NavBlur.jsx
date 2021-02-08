@@ -5,7 +5,10 @@ import NavItemBlur from './NavItemBlur';
 
 function NavBlur(props) {
 
-let blurArrayItems = props.blurArrayItem.map(nav => <NavItemBlur touchItemClick={props.touchItemClick} name={nav.name} 
+let blurArrayItems = props.blurArrayItem.map(nav => <NavItemBlur 
+                                                mouseBlurItemTouch ={props.mouseBlurItemTouch}
+                                                touchItemClick={props.touchItemClick} 
+                                                name={nav.name} 
     
 />)
 

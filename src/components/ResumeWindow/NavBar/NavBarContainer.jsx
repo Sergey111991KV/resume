@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { exitTagCreator, mouseEnterTagCreator, touchTagCreator, mouseExitTagCreator } from '../../../redux/resume-navbar-reducer';
+import { exitTagCreator, mouseEnterTagCreator, touchTagCreator, mouseExitTagCreator,mouseEnterBlurTagCreator } from '../../../redux/resume-navbar-reducer';
 import NavBar from './NavBar';
 
 
@@ -60,8 +60,10 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(mouseEnterTagCreator(name))
     },
     mouseExitItem : () => {
-      console.log('mouseExitItem')
       dispatch(mouseExitTagCreator())
+    },
+    mouseBlurItemTouch : (name) => {
+      dispatch(mouseEnterBlurTagCreator(name))
     }
   }
 }

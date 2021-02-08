@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import './NavItemMain.css'
 
 
@@ -8,24 +9,21 @@ import './NavItemMain.css'
 function NavItemMain(props) {
 
   const funcMouseIn = () => {
-    console.log('funcMouseIn')
-    props.mouseMoveItem(props.name)
+      props.mouseMoveItem(props.name)
+    
   }
-
-  // const funcMouseOut = () => {
-  //   console.log('funcMouseOut')
-  //   props.mouseExitItem()
-  // }
 
   const funcClick = () => {
-    props.touchItemClick(props.name)
+    if (props.name === "Exit") {
+       props.exitClick()
+    } else {
+      props.touchItemClick(props.name)
+    }
+   
   }
- 
-  const f = () => { console.log('dd')}
   return (
     <div className="nav_bar_item_main" 
           onMouseMove={funcMouseIn} 
-          // onMouseOut={funcMouseOut}
           onClick={funcClick}
            >
           {props.name}

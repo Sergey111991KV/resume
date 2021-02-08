@@ -21,7 +21,9 @@ function NavBarContent(props) {
         return  <NavLink  to={it.refAdress}>{it.name}</NavLink>
       }
     }
-  if (isEmpty(props.mouseItem)) {
+
+  if (isEmpty(props.mouseBlurItem)) {
+    if (isEmpty(props.mouseItem)) {
       return (
         <div  className="nav_bar_content">
             {props.mainItem.content}
@@ -29,7 +31,7 @@ function NavBarContent(props) {
         </div>
       );
     }
-  else {
+    else {
       return (
         <div  className="nav_bar_content">
             {props.mouseItem.content}
@@ -37,7 +39,18 @@ function NavBarContent(props) {
         </div>
       );
     }
+  }  else {
+    return (
+      <div  className="nav_bar_content">
+          {props.mouseBlurItem.content}
+          {funcRef(props.mainItem)}
+      </div>);
   }
+
+
+
+
+}
 
 
 

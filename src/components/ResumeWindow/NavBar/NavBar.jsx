@@ -6,24 +6,16 @@ import NavBlur from './NavBlur/NavBlur'
 import NavMain from './NavMain/NavMain'
 
 
-
-
-
-
-
-
-
-const funcMouseLeave = () => {
-  console.log('funcMouseLeave')
-  
-}
-
-
-
 function NavBar(props) {
     let mainItemArray =() => {
               let newMainItemArray = props.resumeNavPage.arrayAllItem.filter(item => item.mainTag == props.resumeNavPage.navMainItemDefault.name)
-              return newMainItemArray
+              if (props.resumeNavPage.navMainItemDefault.mainTag == '') {
+                return [...newMainItemArray ]
+              } else {
+                return [...newMainItemArray,{id: 13, mainTag: '', name: 'Exit', refAdress: "/main", content: ''} ]
+              }
+             
+             
               }
                       
     let blurItemArray = () => {
@@ -35,29 +27,30 @@ function NavBar(props) {
 
 
   return (
-
+    
 
 
     <div className="social_network_NavBar_container"   >
+   
         <HeaderNavBar  headerName={props.resumeNavPage.navMainItemDefault.name}  />
             <div className="window_Tags" 
                   onMouseLeave={props.mouseExitItem}
            >
               <NavMain  array={mainItemArray()}
                         mouseMoveItem={props.mouseMoveItem} 
-                      
-                        // mouseExitItem={}
+                        exitClick={props.exitClick}
                         touchItemClick={props.touchItemClick} 
               ></NavMain>
               <NavBlur blurArrayItem={blurItemArray()}
-                      //  touchItemClick={props.touchItemClick}
+                       touchItemClick={props.touchItemClick}
+                       mouseBlurItemTouch={props.mouseBlurItemTouch}
                         >
                          
                        </NavBlur>
             </div>
          
             <NavBarContent  
-                            
+                            mouseBlurItem ={props.resumeNavPage.mouseBlurItem} 
                             mouseItem={props.resumeNavPage.mouseEnterItem} 
                             mainItem={props.resumeNavPage.navMainItemDefault}
             ></NavBarContent>

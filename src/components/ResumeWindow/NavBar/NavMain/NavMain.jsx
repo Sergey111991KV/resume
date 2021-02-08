@@ -7,10 +7,8 @@ import './NavMain.css'
 function NavMain(props) {
   let mainArrayItems = props.array.map(nav => <NavItemMain  name={nav.name} 
     id={nav.id}
-  
-    // mouseExitItem={props.mouseExitItem}
     touchItemClick={props.touchItemClick}
-    // exitClick={props.exitClick} 
+    exitClick={props.exitClick} 
     mouseMoveItem={props.mouseMoveItem}
 />)
 
