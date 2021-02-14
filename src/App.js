@@ -8,7 +8,6 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className='app_container'>
-        ooo
         <Route path='/resume' render={() => <ResumeWindow />}/>
         <Route path='/social' render={() => <SocialWindow />}/>
       </div>
