@@ -31,22 +31,29 @@ function NavBar(props) {
 
 
     <div className="social_network_NavBar_container"   >
-   
+
         <HeaderNavBar  headerName={props.resumeNavPage.navMainItemDefault.name}  />
+        
             <div className="window_Tags" 
                   onMouseLeave={props.mouseExitItem}
            >
-              <NavMain  array={mainItemArray()}
+        
+                    <NavMain  array={mainItemArray()}
                         mouseMoveItem={props.mouseMoveItem} 
                         exitClick={props.exitClick}
-                        touchItemClick={props.touchItemClick} 
-              ></NavMain>
+                        touchItemClick={props.touchItemClick}>
+                    </NavMain>
+       
+     
+       
               <NavBlur blurArrayItem={blurItemArray()}
                        touchItemClick={props.touchItemClick}
                        mouseBlurItemTouch={props.mouseBlurItemTouch}
                         >
                          
                        </NavBlur>
+                    
+         
             </div>
          
             <NavBarContent  
@@ -54,6 +61,7 @@ function NavBar(props) {
                             mouseItem={props.resumeNavPage.mouseEnterItem} 
                             mainItem={props.resumeNavPage.navMainItemDefault}
             ></NavBarContent>
+        
         </div>
       
   );

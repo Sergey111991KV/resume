@@ -1,6 +1,8 @@
 import React from 'react'
 import './NavBarContent.css'
-import {NavLink} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
+import {Spring} from 'react-spring/renderprops'
+import NavBarContentItem from "./NavBarContentItem"
 
 
 function isEmpty(obj) {
@@ -13,39 +15,86 @@ function isEmpty(obj) {
   return JSON.stringify(obj) === JSON.stringify({});
 }
 
-function NavBarContent(props) {
 
-  let funcRef = (it) => {
-      if (it.refAdress === '') {
-      } else {
-        return  <NavLink  to={it.refAdress}>{it.name}</NavLink>
-      }
-    }
+function NavBarContent(propss) {
+ 
 
-  if (isEmpty(props.mouseBlurItem)) {
-    if (isEmpty(props.mouseItem)) {
+  if (isEmpty(propss.mouseBlurItem)) {
+    if (isEmpty(propss.mouseItem)) {
       return (
-        <div  className="nav_bar_content">
-            {props.mainItem.content}
-            {funcRef(props.mainItem)}
-        </div>
-      );
-    }
-    else {
-      return (
-        <div  className="nav_bar_content">
-            {props.mouseItem.content}
-            {funcRef(props.mouseItem)}
-        </div>
-      );
-    }
-  }  else {
-    return (
-      <div  className="nav_bar_content">
-          {props.mouseBlurItem.content}
-          {funcRef(props.mainItem)}
-      </div>);
-  }
+            <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
+                config={{duration: 500}}
+                reset={true}
+            >
+                {props =>
+                  <div  className="nav_bar_content" style={props}>
+                    <NavBarContentItem name={propss.mainItem.name} content={propss.mainItem.content} refs={propss.mainItem.refAdress} link={propss.mainItem.link}/>
+
+                   </div>
+                }
+            </Spring> 
+            )
+        }
+        else {
+          return (
+            <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
+                config={{duration: 500}}
+                reset={true}
+            >
+                {props =>
+                   <div  className="nav_bar_content" style={props}>
+                      <NavBarContentItem name={propss.mouseItem.name} content={propss.mouseItem.content} refs={propss.mouseItem.refAdress} link={propss.mouseItem.link}/>
+                  </div>
+                }
+            </Spring> 
+            )
+
+        }
+       } else {
+          return (
+            <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
+                config={{duration: 500}}
+                reset={true}
+            >
+                {props =>
+                     <div  className="nav_bar_content" style={props}>
+                         <NavBarContentItem name={propss.mouseBlurItem.name} content={propss.mouseBlurItem.content} refs={propss.mouseBlurItem.refAdress} link={propss.mouseBlurItem.link}/>
+                      </div>
+                }
+            </Spring> 
+            )
+        }
+
+    
+  
+        
+  //       <div  className="nav_bar_content">
+  //           {props.mainItem.content}
+  //           {funcRef(props.mainItem)}
+  //       </div>
+  //     );
+  //   }
+  //   else {
+  //     return (
+  //       <div  className="nav_bar_content">
+  //           {props.mouseItem.content}
+  //           {funcRef(props.mouseItem)}
+  //       </div>
+  //     );
+  //   }
+  // }  else {
+  //   return (
+  //     <div  className="nav_bar_content">
+  //         {props.mouseBlurItem.content}
+  //         {funcRef(props.mainItem)}
+  //     </div>);
+  // }
 
 
 

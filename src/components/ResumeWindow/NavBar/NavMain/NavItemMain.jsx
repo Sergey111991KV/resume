@@ -1,10 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
+
 import './NavItemMain.css'
-
-
-
-
 
 function NavItemMain(props) {
 
@@ -22,12 +18,17 @@ function NavItemMain(props) {
    
   }
   return (
+    
+   
+
     <div className="nav_bar_item_main" 
-          onMouseMove={funcMouseIn} 
+    onMouseOver={funcMouseIn} 
           onClick={funcClick}
            >
           {props.name}
     </div>
+
+    
   );
 }
 

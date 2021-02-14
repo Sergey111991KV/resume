@@ -7,6 +7,7 @@ import './Window.css'
 import {  Route } from "react-router-dom";
 import Profil from '../Contents/Profil/Profil'
 import DialogsContainer from '../Contents/Dialogs/DialogsContainer'
+import UsersContainer from '../Contents/Users/UsersContainer'
 
 
 function SocialWindow(props) {
@@ -16,9 +17,9 @@ function SocialWindow(props) {
           <Header></Header>
           <NavBar></NavBar>
           <div>
-                <Route path='/social/profile' render={ () => <Profil />} 
-                />
+                <Route path='/social/profile' render={ () => <Profil />} />
                 <Route path='/social/dialogs' render={ () => <DialogsContainer />}/>
+                <Route path='/social/users' render={ () => <UsersContainer />}/>
             
           </div>
           <Footer></Footer>
