@@ -10,7 +10,7 @@ function NavBar() {
       <NavItem name="News" refAdress="/news"></NavItem>
       <NavItem name="Music" refAdress="/music"></NavItem>
       <NavItem name="Settings" refAdress="/settings"></NavItem>
-      <NavItem name="Exit" refAdress="/main"></NavItem>
+      <NavItem name="Exit" refAdress="/resume"></NavItem>
     </div>
   );
 }
