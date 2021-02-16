@@ -4,8 +4,8 @@ const SET_USERS = 'SET-USERS'
 
 let initialState = {
         users : [
-           
-          ]
+          
+        ]
 }
 
 const usersReducer = (state = initialState,action) => {
