@@ -8,9 +8,11 @@ function NavBar() {
       <NavItem name="Profile"refAdress="/social/profile"></NavItem>
       <NavItem name="Message" refAdress="/social/dialogs"></NavItem>
       <NavItem name="News" refAdress="/news"></NavItem>
+      <NavItem name="Users" refAdress="/social/users"></NavItem>
       <NavItem name="Music" refAdress="/music"></NavItem>
       <NavItem name="Settings" refAdress="/settings"></NavItem>
       <NavItem name="Exit" refAdress="/resume"></NavItem>
+      
     </div>
   );
 }
